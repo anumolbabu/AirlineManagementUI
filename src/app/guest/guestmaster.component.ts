@@ -15,13 +15,31 @@ export class GuestMasterComponent  {
   LogOut(){
     this._authService.logoutUser();
   }
-
   LoggedIn(input:boolean):boolean{
+    debugger;
     if(input){
       return this._authService.loggedIn();
     }
     else{
       return !this._authService.loggedIn();
+    }
+  }
+  IsAdmin(input:boolean):boolean{
+    debugger;
+    if(input){
+      return this._authService.isAdmin();
+    }
+    else{
+      return !this._authService.isAdmin();
+    }
+  }
+  IsUser(input:boolean):boolean{
+    debugger;
+    if(input){
+      return this._authService.isUser();
+    }
+    else{
+      return !this._authService.isUser();
     }
   }
   

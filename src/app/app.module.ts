@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { GuestMasterComponent } from "./guest/guestmaster.component";
 import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from './register/register.component';
 import { MainRoutingModule } from "./routing/airline.mainroutes";
 import { AuthGaurd } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
@@ -14,7 +15,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
         GuestMasterComponent,
       //EventsComponent,
       LoginComponent,
-      //RegisterComponent,
+      RegisterComponent,
       //SpecialEventsComponent
     ],
     imports: [

@@ -1,6 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { HomeComponent } from "../Home/home.component";
 import { LoginComponent } from "../login/login.component";
+import { RegisterComponent } from "../register/register.component";
+import { SearchComponent } from "../search/searchflight.component";
 
 export const MainRoutes = [
     {
@@ -11,7 +14,20 @@ export const MainRoutes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
+    },
+    {
+        path: 'home',
+        component: HomeComponent
+    },
+    {
+        path: 'search',
+        component: SearchComponent
     }
+
   
 ];
 
