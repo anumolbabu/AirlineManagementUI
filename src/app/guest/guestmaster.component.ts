@@ -16,7 +16,6 @@ export class GuestMasterComponent  {
     this._authService.logoutUser();
   }
   LoggedIn(input:boolean):boolean{
-    debugger;
     if(input){
       return this._authService.loggedIn();
     }
@@ -25,7 +24,6 @@ export class GuestMasterComponent  {
     }
   }
   IsAdmin(input:boolean):boolean{
-    debugger;
     if(input){
       return this._authService.isAdmin();
     }
@@ -34,7 +32,6 @@ export class GuestMasterComponent  {
     }
   }
   IsUser(input:boolean):boolean{
-    debugger;
     if(input){
       return this._authService.isUser();
     }

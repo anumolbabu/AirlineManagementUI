@@ -1,0 +1,84 @@
+<div class="row py-5">
+    <h5>Manage Airlines</h5>
+</div>
+
+<div class="container py-3">
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group">
+                <div class="row">
+                    <table class="table">
+                        <thead style="border-color: rgb(155, 247, 247);background-color: rgb(155, 247, 247);">
+                            <tr>
+                                <td>Add Airlines</td><td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr><td>Airline Name</td><td> <input [(ngModel)]="airlineData.airlineName" class="form-control" type="text" /></td></tr> 
+                            <tr><td>Contact Number</td><td> <input [(ngModel)]="airlineData.contactNumber" class="form-control" type="text" /></td></tr>
+                            <tr> <td>Contact Address</td><td> <input [(ngModel)]="airlineData.contactAddress" class="form-control" type="text" /></td></tr>
+                            
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="row col-md-12">
+                        <button type="submit" (click)="addAirline()" class="btn btn-success">Add Airline</button>
+                    </div>
+                </div>
+                <label style="color: red;">{{AlertMessage}}</label>    
+                <label style="color: red;">{{SuccessMessage}}</label>    
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr style="border-color: rgb(9, 10, 10);background-color: rgb(155, 247, 247);">
+                                <td>View Airlines</td><td></td><td></td>
+                            </tr>
+                            <tr style="border-color: rgb(24, 19, 22);background-color: rgb(238, 215, 228);">
+                                <th scope="col">Airline Name</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">ContactAddress</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let airline of allAirlines">
+                                <td>
+                                    <input [(ngModel)]="airline.airlineName" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="airline.contactNumber" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="airline.contactAddress" class="form-control" type="text" />
+                                </td>
+                                
+                                
+                                <td> <input type="button" value="Edit" (click)="EditAirlines(airline)" /></td>
+                                    
+                                <td> <input type="button" value="Delete" (click)="DeleteAirlines(airline.airlineId)" /></td>  
+                                    <!-- <span style="float: left;color: green;"><i (click)="EditAirlines(airline)"
+                                            class="fa fa-plus fa-lg"></i></span>
+                                    <span style="float: right; color: red;"><i (click)="DeleteAirlines(airline.airlineId)"
+                                            class="fa fa-trash fa-lg"></i></span> -->
+                               
+                           
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <label style="color: red;">{{EditAlertMessage}}</label>    
+                <label style="color: red;">{{EditSuccessMessage}}</label>     -->
+            </div>
+        </div>
+    </div>
+</div>

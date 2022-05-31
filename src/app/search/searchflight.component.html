@@ -1,1 +1,106 @@
-Welcome Search
+<div class="row py-5">
+    <h5>Book your flights</h5>
+</div>
+
+<div class="container py-3">
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group">
+                <div class="row">
+                    <table class="table">
+                        <thead style="border-color: rgb(155, 247, 247);background-color: rgb(155, 247, 247);">
+                            <tr>
+                                <td>Search Flights</td><td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>FromPlace</td><td> <input [(ngModel)]="searchRequestData.fromPlace" class="form-control" type="text" /></td></tr> 
+                            <tr><td>ToPlace</td><td> <input [(ngModel)]="searchRequestData.toPlace" class="form-control" type="text" /></td></tr>
+                            <tr><td>From Date </td><td> <input [(ngModel)]="searchRequestData.startDateTime" class="form-control" type="date" /></td></tr> 
+                            <tr><td>To Date</td><td> <input [(ngModel)]="searchRequestData.endDateTime" class="form-control" type="date" /></td></tr> 
+                            
+                             <div class="row g-0">
+                            <div class="col-md-8 mb-6">
+                                <div class="form-outline">
+                                    <input type="radio" aria-selected="true" id="roundTrip" style="margin-right:5px;"
+                                        name="travelType" value="roundTrip">
+                                    <label for="roundTrip" style="margin-right:20px;">Round Trip</label>
+
+                                    <input type="radio" style="margin-right:5px;" id="oneWay" name="travelType"
+                                        value="oneWay">
+                                    <label for="oneWay">One Way</label>
+                                </div>
+                            </div>
+                        </div>
+                           
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="row col-md-12">
+                        <button type="submit" (click)="searchFlight()" class="btn btn-success">Search</button>
+                    </div>
+                </div>
+                <!-- <label style="color: red;">{{AlertMessage}}</label>    
+                <label style="color: red;">{{SuccessMessage}}</label>     -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr style="border-color: rgb(9, 10, 10);background-color: rgb(155, 247, 247);">
+                                <td>Flight details</td><td></td><td></td>
+                            </tr>
+                            <tr style="border-color: rgb(24, 19, 22);background-color: rgb(238, 215, 228);">
+                                <th scope="col">Airline Name</th>
+                                <th scope="col">Flight Number</th>
+                                <th scope="col">From</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Departure</th>
+                                <th scope="col">Arrival</th>
+                                <th scope="col">TicketPrice</th>
+                                <th scope="col">Book Flight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let responsedata of searchResponseData">
+                                <td>
+                                    <input [(ngModel)]="responsedata.airlineName" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="responsedata.flightNumber" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="responsedata.fromPlace" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="responsedata.toPlace" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="responsedata.startDateTime" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="responsedata.endDateTime" class="form-control" type="text" />
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="responsedata.ticketCost" class="form-control" type="text" />
+                                </td>
+                                
+                                <td> <input type="button" value="Book" (click)="BookFlight(responsedata)" /></td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <label style="color: red;">{{EditAlertMessage}}</label>    
+                <label style="color: red;">{{EditSuccessMessage}}</label>     -->
+            </div>
+        </div>
+    </div>
+</div>

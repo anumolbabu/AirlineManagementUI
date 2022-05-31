@@ -3,12 +3,14 @@ import { Router } from '@angular/router'
 import { Injectable } from '@angular/core';
 import { LoginData } from '../models/logindata';
 import { RegisterData } from '../models/registerdata';
+import { AirlineData } from '../models/airlinedata';
+import { AirlineModel } from '../models/airlinemodel';
 
 @Injectable()
 export class AuthService {
     private _registerUrl = "http://localhost:16192/api/v1.0/airlinegateway/registration/register";
     private _loginUrl = "http://localhost:16192/api/v1.0/airlinegateway/login"
-
+   
     constructor(private http: HttpClient, private _router: Router) {
 
     }
@@ -37,7 +39,6 @@ export class AuthService {
         return localStorage.getItem('Token')
     }
     loggedIn() {
-        debugger;
         return !!localStorage.getItem('Token')
     }
     isAdmin() {
