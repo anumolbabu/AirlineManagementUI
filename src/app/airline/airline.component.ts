@@ -9,11 +9,11 @@ import { AirlineModel } from '../models/airlinemodel';
     templateUrl: './airline.component.html'
   })
 
- export class AirlineComponent{
+ export class AirlineComponent implements OnInit{
 
     airlineData: AirlineData = new AirlineData();
     airlineModel: AirlineModel=new AirlineModel();
-
+    
     allAirlines: Array<AirlineData> = new Array<AirlineData>();
 
         
@@ -22,15 +22,16 @@ import { AirlineModel } from '../models/airlinemodel';
     private _addAirlineUrl = "http://localhost:16192/api/v1.0/airlinegateway/airLine/addairline";
     private _getAirlinesUrl = "http://localhost:16192/api/v1.0/airlinegateway/airLine/getairlines";
     private _editAirlinesUrl = "http://localhost:16192/api/v1.0/airlinegateway/airLine/editairline";
-    private _deleteAirlinesUrl = "http://localhost:16192/api/v1.0/airlinegateway/airLine/delete";
-
+    
 
     constructor(private http: HttpClient, private _router: Router) {
       this.GetAirlines()
      }
 
+    ngOnInit(): void {
+      
+    }
 
- 
     addAirline() {
       this.airlineModel.AirlineName=this.airlineData.airlineName;
       this.airlineModel.ContactAddress=this.airlineData.contactAddress;
@@ -96,9 +97,9 @@ import { AirlineModel } from '../models/airlinemodel';
 
 
       DeleteAirlines(input:number){
-        let httpParms=new HttpParams().set("Id",input)
-        let options={params:httpParms};
-        this.http.delete<any>(this._deleteAirlinesUrl,options).subscribe(res=>this.SuccessDelete(res),res=>this.ErrorDelete(res))
+        // let httpParms=new HttpParams().set("Id",input)
+        // let options={params:httpParms};
+        this.http.delete<any>("http://localhost:16192/api/v1.0/airlinegateway/airLine/delete/"+input+"").subscribe(res=>this.SuccessDelete(res),res=>this.ErrorDelete(res))
       }
         SuccessDelete(res:any){
           if(res!= null)

@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { AirlineComponent } from "../airline/airline.component";
+import { BookedTicketComponent } from "../bookedticket/bookedticket.component";
+import { BookflightComponent } from "../bookflight/bookflight.component";
 import { HomeComponent } from "../Home/home.component";
 import { LoginComponent } from "../login/login.component";
 import { RegisterComponent } from "../register/register.component";
@@ -34,6 +36,16 @@ export const MainRoutes = [
         path: 'search',
         canActivate:[AuthGaurd],
         component: SearchComponent
+    },
+    {
+        path: 'bookflight',
+        canActivate:[AuthGaurd],
+        component: BookflightComponent
+    },
+    {
+        path: 'bookedTicket',
+        canActivate:[AuthGaurd],
+        component: BookedTicketComponent
     }
 
   

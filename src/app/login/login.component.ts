@@ -6,10 +6,13 @@ import { AuthService } from '../services/auth.service';
 @Component({
   templateUrl: './login.component.html'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   loginUserData: LoginData = new LoginData();
   constructor(private _auth: AuthService, private _router: Router) { }
+  ngOnInit(): void {
+    this._auth.logoutUser();
+  }
   loginUser() {
     this._auth.loginUser(this.loginUserData).subscribe(res => {
       localStorage.setItem('UserId', res.UserId)

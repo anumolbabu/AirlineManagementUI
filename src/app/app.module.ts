@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AirlineComponent } from './airline/airline.component';
+import { BookflightComponent } from './bookflight/bookflight.component';
 import { GuestMasterComponent } from "./guest/guestmaster.component";
 import { LoginComponent } from "./login/login.component";
+import { BookedTicketComponent } from './bookedticket/bookedticket.component';
 import { RegisterComponent } from './register/register.component';
 import { MainRoutingModule } from "./routing/airline.mainroutes";
 import { SearchComponent } from './search/searchflight.component';
@@ -18,7 +20,9 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
       AirlineComponent,
       LoginComponent,
       RegisterComponent,
-      SearchComponent
+      SearchComponent,
+      BookflightComponent,
+      BookedTicketComponent
     ],
     imports: [
       BrowserModule,

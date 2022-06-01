@@ -1,0 +1,77 @@
+<div class="row py-5">
+    <h5>Book your flights</h5>
+</div>
+
+<div class="container py-3">
+    <div class="row ">
+        <div class="form col-md-12">
+            <div class="form-group">
+                <div class="row">
+                    <table class="table">
+                        <thead style="border-color: rgb(155, 247, 247);background-color: rgb(155, 247, 247);">
+                            <tr>
+                                <td>Passenger Details</td><td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr><td>Passenger Name</td><td> <input [(ngModel)]="searchRequestData.fromPlace" class="form-control" type="text" /></td></tr> 
+                            <tr><td>Passenger Gender</td><td> <input [(ngModel)]="searchRequestData.toPlace" class="form-control" type="text" /></td></tr>
+                            <tr><td>Passenger Age </td><td> <input [(ngModel)]="searchRequestData.startDateTime" class="form-control" type="date" /></td></tr> 
+                             <tr><td>To Date</td><td> <input [(ngModel)]="searchRequestData.endDateTime" class="form-control" type="date" /></td></tr>  -->
+                             
+                           
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row">
+                    <div class="row col-md-12">
+                        <table >
+                            <thead>
+                            <tr>
+                              <td class="tdBorderEmail"><label>Name</label></td>
+                              <td class="tdBorderEmail"><label>Gender</label></td>
+                              <td class="tdBorderEmail"><label>Age</label></td>      
+                              <td class="tdBorderEmail"><label>Action</label></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let dynamic of dynamicArray; let i = index;">
+                             
+                              <td>
+                                <input style="width:120px"  name="{{dynamic.PassengerName}}" [(ngModel)]="dynamic.PassengerName"  type="text" />
+                              </td>
+                              <td>
+                                <input style="width:120px" name="{{dynamic.PassengerGender}}" [(ngModel)]="dynamic.PassengerGender"  type="text" />
+                              </td>
+                              <td>
+                                <input  style="width:250px" name="{{dynamic.PassengerAge}}" [(ngModel)]="dynamic.PassengerAge"  type="text"/>
+                              </td>
+                              <td>
+                                <button class="fa fa-plus " (click)="deleteRow(i)">Delete</button>
+                              </td>
+                             
+                            </tr>
+                            <tr>
+                              <td>
+                                <button class="fa fa-plus" (click)="addRow()">Add</button>
+                              </td>
+                             
+                            </tr>
+                            </tbody>
+                            </table>   
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row col-md-12">
+                        <button type="submit" (click)="flightBook()" class="btn btn-success">Book Flight</button>
+                    </div>
+                </div>
+                <!-- <label style="color: red;">{{AlertMessage}}</label>    
+                <label style="color: red;">{{SuccessMessage}}</label>     -->
+            </div>
+        </div>
+    </div>
+
+   

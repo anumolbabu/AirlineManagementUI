@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link"  *ngIf="IsAdmin(true)" routerLink="/home">Home</a>
+          <a class="nav-link"  *ngIf="LoggedIn(true)" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  *ngIf="IsAdmin(true)" routerLink="/airline">Airlines</a>
@@ -15,15 +15,15 @@
         <li class="nav-item">
           <a class="nav-link"  *ngIf="IsAdmin(true)" routerLink="/home">Flights</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link"  *ngIf="IsAdmin(true)" routerLink="/home">Schedule</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link"  *ngIf="IsUser(true)" routerLink="/search">New Booking</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link"  *ngIf="IsUser(true)" routerLink="/search">My Bookings</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link"  *ngIf="IsUser(true)" routerLink="/search">History</a>
         </li>
